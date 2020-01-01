@@ -9,6 +9,7 @@ import org.junit.jupiter.api.DisplayName;
 public class PatternRecogTest
 {
 	
+	
 	static final String[][] TestCases = {
 		{"Sample" , "S**ple"},
 		{"Sample" , "*ample"},

@@ -13,3 +13,9 @@ blocks:
             - checkout
             - sem-version java 1.8
             - mvn -B package --file pom.xml
+  - name: Maven Deploy
+    task:
+      jobs:
+        - name: Maven Packaging
+          commands:
+            - mvn package

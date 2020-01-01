@@ -1,0 +1,9 @@
+{
+  "os": [
+    "linux"
+  ],
+  "java": {
+    "stable": null
+  },
+  "language": "java"
+}

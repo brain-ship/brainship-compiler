@@ -1,3 +1,5 @@
 # BrainShip Compiler
 ## Cross-platform, Cross-language, unified build toolkit
-[![Build Status](https://travis-ci.org/brain-ship/brainship-compiler.svg?branch=master)](https://travis-ci.org/brain-ship/brainship-compiler) [![Build Status](https://dev.azure.com/projectbrainship/projectbrainship/_apis/build/status/brain-ship.brainship-compiler?branchName=master)](https://dev.azure.com/projectbrainship/projectbrainship/_build/latest?definitionId=1&branchName=master) ![Semaphore Build Pipeline](https://brain-ship.semaphoreci.com/badges/brainship-compiler.svg?style=shields)
+### Travis CI Build Status       :       [![Build Status](https://travis-ci.org/brain-ship/brainship-compiler.svg?branch=master)](https://travis-ci.org/brain-ship/brainship-compiler) 
+### Azure Pipelines Build Status : [![Build Status](https://dev.azure.com/projectbrainship/projectbrainship/_apis/build/status/brain-ship.brainship-compiler?branchName=master)](https://dev.azure.com/projectbrainship/projectbrainship/_build/latest?definitionId=1&branchName=master) 
+### SemaphoreCI Build Pipleines  : ![Semaphore Build Pipeline](https://brain-ship.semaphoreci.com/badges/brainship-compiler.svg?style=shields)

@@ -1,1 +1,1 @@
-# brainship-compiler
+# BrainShip Compiler

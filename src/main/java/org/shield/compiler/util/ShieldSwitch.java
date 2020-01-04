@@ -140,14 +140,9 @@ public class ShieldSwitch
 		System.out.println();
 		
 		IndentationManager im = new IndentationManager();
-		// General File Listing
+		
 		if("dir".equals(st)) {
-			File[] f = listFiles(Settings.path);
-			
-			for(int i = 0; i < f.length; i++) {
-				im.add(f[i]);
-			}
-			print(im.getIndentedStrings());
+			listAll(im);
 			return;
 		}
 		
@@ -155,25 +150,12 @@ public class ShieldSwitch
 		int indexd = st.indexOf(' ');
 		String args = st.substring(indexd+1);
 		if("*".equals(args)) {
-			
-			File[] f = listFiles(Settings.path);
-			for(int i = 0; i < f.length; i++) {
-				im.add(f[i]);
-			}
-			print(im.getIndentedStrings());
+			listAll(im);
 			return;
-			
 		}
 		
 		if(args.startsWith("*")) {
-			String extension = args.substring(args.indexOf('.')+1);
-			File[] f = listFiles(Settings.path);
-			
-			for(int i = 0; i < f.length; i++) {
-				if(f[i].getName().endsWith(extension))
-					im.add(f[i]);
-			}
-			print(im.getIndentedStrings());
+			listAll(im, args);
 			return;
 		}
 		
@@ -185,64 +167,33 @@ public class ShieldSwitch
 			return;
 		}
 		
-		File[] f = listFiles(tpath);
-		for(int i = 0; i < f.length; i++) {
-			im.add(f[i]);
-		}
-		print(im.getIndentedStrings());
+		list(im, tpath);
 	}	
 	
 	// Analagous to "ls" for directory listing
 	private static void lsSwitch(String st) {
-		
-		System.out.println();
-		
-		IndentationManager im = new IndentationManager();
-		
-		if("ls".equals(st)) {
-			File[] f = listFiles(Settings.path);
-			for(int i = 0; i < f.length; i++) {
-				im.add(f[i]);
-			}
-			print(im.getIndentedStrings());
-			return;
-		}
-		
-		int indexd = st.indexOf(' ');
-		String args = st.substring(indexd+1);
-		
-		if("*".equals(args)) {
-			File[] f = listFiles(Settings.path);
-			for(int i = 0; i < f.length; i++) {
-				im.add(f[i]);
-			}
-			print(im.getIndentedStrings());
-			return;
-		}
-		
-		if(args.startsWith("*")) {
-			String extension = args.substring(args.indexOf('.')+1);
-			File[] f = listFiles(Settings.path);
-			for(int i = 0; i < f.length; i++) {
-				if(f[i].getName().endsWith(extension))
-					im.add(f[i]);
-			}
-			print(im.getIndentedStrings());
-			return;
-		}
-		
-		String tpath = Settings.path + "/" + args;
-		File ndir= new File(tpath);
-		
-		if(!ndir.isDirectory() || !ndir.exists()) {
-			System.out.println("\tInvalid Directory Specification!!");
-			return;
-		}
-		
-		File[] f = listFiles(tpath);
-		
+		dirSwitch(st.replace("ls","dir"));
+	}
+	
+	// Helper Functions
+	
+	// General File Listing
+	private static void listAll(IndentationManager im, String st) {
+		File[] f = listFiles(Settings.path);
 		for(int i = 0; i < f.length; i++) {
-			im.add(f[i]);
+			if(f[i].getName().endsWith(st)) im.add(f[i]);
+		}
+		print(im.getIndentedStrings());
+	}
+	
+	private static void listAll(IndentationManager im) {
+		listAll(im, "");
+	}
+	
+	private static void list(IndentationManager im, String st) {
+		File[] f = listFiles(Settings.path+"\\"+st);
+		for(int i = 0; i < f.length; i++) {
+			if(f[i].getName().endsWith(st)) im.add(f[i]);
 		}
 		print(im.getIndentedStrings());
 	}

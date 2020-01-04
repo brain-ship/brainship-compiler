@@ -11,3 +11,10 @@ Currently BrainShip supports:
 *  Java Projects
 *  C++ Integration [ Feature Under Construction ]
 *  Python Integration [ Feature Under Construction ]
+\
+## Compiling Project BrainShip
+BrainShip uses Maven build system\
+Use the following command to compile an run tests ...\
+```shell
+mvn package
+```

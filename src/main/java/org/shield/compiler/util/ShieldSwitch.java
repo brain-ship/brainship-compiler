@@ -306,7 +306,7 @@ public class ShieldSwitch
 		
 		try {
 			pname = st.substring(st.indexOf(" ")+1)+".shieldproject";
-			ProjectConfigaration temp = (new ProjectConfigaration(pname));
+			Settings.pconf = (new ProjectConfigaration(pname));
 		} catch(IOException ioe) {
 			Settings.pconf = null;
 			flag = true;

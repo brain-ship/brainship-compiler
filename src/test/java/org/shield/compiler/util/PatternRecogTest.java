@@ -35,7 +35,7 @@ public class PatternRecogTest
     {
 		boolean flag  = true;
 		for(int i = 0; i < TestCases.length; i++)
-			flag = flag && PatternRecog.check(TestCases[i][0], TestCases[i][1]);
+			flag = flag && (expected[i] && PatternRecog.check(TestCases[i][0], TestCases[i][1]));
         assertEquals( true , flag );
     }
 }

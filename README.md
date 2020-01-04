@@ -16,4 +16,6 @@ BrainShip uses Maven build system\
 Use the following command to compile an run tests ...
 ```shell
 mvn package
+cd target\
+java -jar NAME.jar
 ```

@@ -8,7 +8,6 @@
 ## About BrainShip Compile System
 Project BrainShip is a **unified** code building platform for **multiple languages and platforms**\
 Currently BrainShip supports:
-*	Java Projects
-*	C++ Integration [ Feature Under Construction ]
-*	Python Integration [ Feature Under Construction ]
-
+*  Java Projects
+*  C++ Integration [ Feature Under Construction ]
+*  Python Integration [ Feature Under Construction ]

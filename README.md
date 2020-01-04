@@ -6,7 +6,9 @@
 ### Codacy Code Quality Grade : [![Codacy Badge](https://api.codacy.com/project/badge/Grade/dd528923c5b94102acefd2815278e004)](https://www.codacy.com/manual/project.brainship/brainship-compiler?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=brain-ship/brainship-compiler&amp;utm_campaign=Badge_Grade)
 
 ## About BrainShip Compile System
-Project BrainShip is a **unified** code building platform for **multiple languages and platforms**
+Project BrainShip is a **unified** code building platform for **multiple languages and platforms**\
 Currently BrainShip supports:
 *	Java Projects
-*	C++ Integration [ *** Feature Under Construction *** ]
+*	C++ Integration [ Feature Under Construction ]
+*	Python Integration [ Feature Under Construction ]
+

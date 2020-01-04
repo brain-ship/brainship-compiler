@@ -3,14 +3,12 @@ package org.shield.compiler.util;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.DisplayName;
-
 
 public class PatternRecogTest
 {
 	
 	
-	static final String[][] TestCases = {
+	private static final String[][] TestCases = {
 		{"Sample" , "S**ple"},
 		{"Sample" , "*ample"},
 		{"Sample" , "***p**"},
@@ -21,7 +19,7 @@ public class PatternRecogTest
 		{"Sample" , "*a#le"},
 	};
 	
-	static final boolean[] expected = {
+	private static final boolean[] expected = {
 		true,
 		true,
 		true,

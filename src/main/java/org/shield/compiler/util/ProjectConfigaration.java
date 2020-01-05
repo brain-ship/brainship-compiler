@@ -135,28 +135,76 @@ public class ProjectConfigaration
 		for(int i = 0; i < arr.length; i++)
 			arr[i] = conf.elementAt(i);
 		
+		setDefaultVariables(arr);
+		
+		arr = configure(arr);
+		
+		setProjectName(arr);
+		
+		setProjectPath(arr);
+		
+		setJavaVars(arr);
+		
+		setSubPackages(arr);
+		
+		setJavaFiles(arr);
+		
+		setExecutable(arr);
+	}
+	
+	// Internal Methods
+	
+	private  void setDefaultVariables(String[] arr)
+	{
 		for(int i = 0; i < arr.length; i++)
 		{
 			String t = arr[i];
 			if(t.startsWith("PROJECT_JAVA_SRC_PATH")) jsrct = t.substring(t.indexOf(":")+1);
 			if(t.startsWith("PROJECT_JAVA_BIN_PATH")) jbint = t.substring(t.indexOf(":")+1);
 		}
-		
+	}
+	
+	private String[] configure(String[] arr1) 
+	{
+		String[] arr = arr1;
 		for(int i = 0; i < arr.length; i++)
 			arr[i] = arr[i].replace("$DEF_PATH", Settings.path);
-		
-		for(int i = 0; i < arr.length; i++) {
+		return arr;
+	}
+	
+	private void setProjectName(String[] arr) {
+		for(int i = 0; i < arr.length; i++)
+		{
 			String t = arr[i];
 			if(t.startsWith("PROJECT_NAME")) pname = t.substring(t.indexOf(":")+1);
-			
+		}
+	}
+	
+	private void setProjectPath(String[] arr) {
+		for(int i = 0; i < arr.length; i++)
+		{
+			String t = arr[i];
 			if(t.startsWith("PROJECT_PATH")) proot = t.substring(t.indexOf(":")+1);
-			
+		}
+	} 
+	
+	private void setJavaVars(String[] arr) {
+		for(int i = 0; i < arr.length; i++)
+		{
+			String t = arr[i];
 			if(t.startsWith("PROJECT_JAVA_SRC_PATH")) jsrc = t.substring(t.indexOf(":")+1);
 			
 			if(t.startsWith("PROJECT_JAVA_BIN_PATH")) jbin = t.substring(t.indexOf(":")+1);
 			
 			if(t.startsWith("PROJECT_JAVA_TRPACK")) packroot = t.substring(t.indexOf(":")+1);
-			
+		}
+	}
+	
+	private void setSubPackages(String[] arr)
+	{
+		for(int i = 0; i < arr.length; i++)
+		{
+			String t = arr[i];
 			if("<spackage>".equals(t)) {
 				Vector<String> sp = new Vector<String>(1,1);
 				int j = 0;
@@ -166,8 +214,15 @@ public class ProjectConfigaration
 				}
 				subpack = sp;
 				i = j;
+				break;
 			}
-			
+		}
+	}
+	
+	private void setJavaFiles(String[] arr) {
+		for(int i = 0; i < arr.length; i++)
+		{
+			String t = arr[i];
 			if("<jfiles>".equals(t)) {
 				Vector<String> sp = new Vector<String>(1,1);
 				int j = 0;
@@ -177,8 +232,15 @@ public class ProjectConfigaration
 				}
 				jfiles = sp;
 				i = j;
+				break;
 			}
-			
+		}
+	}
+	
+	private void setExecutable(String[] arr) {
+		for(int i = 0; i < arr.length; i++)
+		{
+			String t = arr[i];
 			if(t.startsWith("EXECUTABLE")) executable = t.substring(t.indexOf(":"));
 		}
 	}

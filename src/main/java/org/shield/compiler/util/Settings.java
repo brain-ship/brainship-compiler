@@ -28,10 +28,7 @@ package org.shield.compiler.util;
 import org.shield.compiler.util.cache.Cache;
 import org.shield.compiler.util.cache.CacheReader;
 
-import java.util.Vector;
 import java.net.URL;
-import java.io.File;
-import java.io.IOException;
 import java.io.FileOutputStream;
 import java.nio.channels.Channels;
 import java.nio.channels.FileChannel;

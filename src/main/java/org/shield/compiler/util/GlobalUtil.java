@@ -28,6 +28,7 @@ package org.shield.compiler.util;
 import org.shield.compiler.util.cache.Cache;
 
 import java.util.Scanner;
+import java.io.File;
 
 /**
  * GlobalUtil class for Realtime Centralized Management
@@ -71,5 +72,6 @@ public class GlobalUtil {
 	public static void postTerminiationProcess() {
 		sc.close();
 		if(Settings.pconf != null) Settings.pconf.rewrite();
+		(new File("shield.cache")).delete();
 	}
 }

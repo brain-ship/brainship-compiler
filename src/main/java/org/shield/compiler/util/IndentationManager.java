@@ -1,8 +1,38 @@
+/*
+ * Part of BrainShip Projects
+ * General Public Licence v3.0, 2019
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ */
+
 package org.shield.compiler.util;
 
 import java.util.Vector;
 import java.io.File;
 
+/**
+ * Manages Indentation in the console
+ * specifically built for dir/ls
+ * commands
+ **/
 public class IndentationManager {
 	
 	private Vector<String> nbuf;
@@ -25,6 +55,7 @@ public class IndentationManager {
 		tbuf.addElement((st.isDirectory())?"":GlobalUtil.getCache().getExtDes(ShieldSwitch.getExtension(st.getName())));
 	}
 	
+	// Perform Indentation
 	public String[] getIndentedStrings() {
 		String[] nst = new String[nbuf.size()];
 		for(int i = 0; i < nst.length; i++)

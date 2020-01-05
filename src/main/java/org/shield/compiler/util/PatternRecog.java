@@ -1,3 +1,28 @@
+/*
+ * Part of BrainShip Projects
+ * General Public Licence v3.0, 2019
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ */
+
 package org.shield.compiler.util;
 
 public class PatternRecog

@@ -1,5 +1,5 @@
 /*
- * Part of Rubidium Projects
+ * Part of BrainShip Projects
  * General Public Licence v3.0, 2019
  *
  *

@@ -44,25 +44,11 @@ public class CacheReader
 	}
 	
 	private void parse() {
-		for(int i =0; i < rdata.size(); i++)
+		boolean vflag = flag();
+		if(!vflag) return;
+		for(int i =0; i < rdata.size() ; i++)
 		{
 			if(rdata.elementAt(i).startsWith("#")) continue;
-			
-			if(rdata.elementAt(i).startsWith("VER")) {
-				String s = rdata.elementAt(i);
-				String st = "";
-				for(int j = s.indexOf(' ')+1; j < s.length(); j++) st+=s.charAt(j);
-				if(!st.equals(GlobalUtil.ver)) {
-					System.out.println("Cache version incompliance found! [You may have modified the file or downloaded the wrong file]");
-					System.out.print("Proceed (y/n)? ");
-					String ch = GlobalUtil.getInput();
-					if("y".equals(ch)) continue;
-					else {
-						GlobalUtil.endProgram();
-						return;
-					}
-				}
-			}
 			
 			if(rdata.elementAt(i).equals("EXTS:")) {
 				for(int j = i+1; j < rdata.size(); j++) {
@@ -84,6 +70,25 @@ public class CacheReader
 				}
 			}
 		}
+	}
+	
+	private boolean flag()
+	{
+		if(rdata.elementAt(i).startsWith("VER")) {
+				String s = rdata.elementAt(i);
+				String st = "";
+				for(int j = s.indexOf(' ')+1; j < s.length(); j++) st+=s.charAt(j);
+				if(!st.equals(GlobalUtil.ver)) {
+					System.out.println("Cache version incompliance found! [You may have modified the file or downloaded the wrong file]");
+					System.out.print("Proceed (y/n)? ");
+					String ch = GlobalUtil.getInput();
+					if("y".equals(ch)) return true;
+					else {
+						GlobalUtil.endProgram();
+						return false;
+					}
+				}
+			}
 	}
 	
 	private String[] breakToIExt(String st) {

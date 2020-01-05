@@ -74,7 +74,9 @@ public class CacheReader
 	
 	private boolean flag()
 	{
-		if(rdata.elementAt(i).startsWith("VER")) {
+		for(int i =0; i < rdata.size() ; i++)
+		{
+			if(rdata.elementAt(i).startsWith("VER")) {
 				String s = rdata.elementAt(i);
 				String st = "";
 				for(int j = s.indexOf(' ')+1; j < s.length(); j++) st+=s.charAt(j);
@@ -89,6 +91,8 @@ public class CacheReader
 					}
 				}
 			}
+		}
+		return false;
 	}
 	
 	private String[] breakToIExt(String st) {

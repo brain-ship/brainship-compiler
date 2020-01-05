@@ -238,14 +238,14 @@ public class ShieldSwitch
 	// Synopsis of available commands
 	public static void help() {
 		System.out.println();
-		System.out.println(" SHIELD Compiler "+GlobalUtil.ver+" ");
+		System.out.println(" BrainShip Compiler "+GlobalUtil.ver+" ");
 		System.out.println("        GNU GPL v3");
 		System.out.println();
 		System.out.println("Valid commands: ");
 		System.out.println("exit | end                             Terminates Program");
 		System.out.println("dir | ls                               Directory listing");
-		System.out.println("newp <new-project> | newp              New SHIELD Project CLI Wizard");
-		System.out.println("newf <filename> | newf                 New SHIELD Project Source File CLI Wizard");
+		System.out.println("newp <new-project> | newp              New BrainShip Project CLI Wizard");
+		System.out.println("newf <filename> | newf                 New BrainShip Project Source File CLI Wizard");
 		System.out.println("loadp <project-name>                   Open a project");
 		System.out.println("eman                                   Extension Manager");
 		System.out.println("sread <filename>                       Stream Read");

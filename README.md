@@ -11,6 +11,12 @@ Currently BrainShip supports:
 *  Java Projects
 *  C++ Integration [ Feature Under Construction ]
 *  Python Integration [ Feature Under Construction ]
+
+and
+
+*	Windows
+*	Linux [ Feature Under Construction ]
+
 ## Compiling Project BrainShip
 BrainShip uses Maven build system\
 Use the following command to compile and run tests ...
@@ -19,11 +25,11 @@ mvn package
 cd target\
 java -jar shield-compiler-1.0-SNAPSHOT.jar
 ```
-### Using BrainShip
+## Using BrainShip
 Run the jar file using the command given above\
 Type ```newp [project-name]``` to create a new project\
 Type ```compile``` to compile the project\
 Type ```help``` to show a synopsis of commands
 
-### Contact
+## Contact
 For any information please feel free to drop a mail to project.brainship@gmail.com

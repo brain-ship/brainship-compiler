@@ -201,6 +201,10 @@ public class ShieldSwitch
 	// Stream Read External Function
 	public static void sread(String st) {
 		String s = st.split(" ")[1];
+		if(!(new File(s)).exists()) {
+			System.out.println("The file does not exist");
+			return;
+		}
 		System.out.println("\n\tReading "+s+"\n");
 		StreamFileReader sfr = new StreamFileReader(s);
 		Vector<String> vec = sfr.read();
